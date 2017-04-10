@@ -1,0 +1,25 @@
+PODS:
+  - VXDataPage (0.0.2):
+    - VXDataPageServiceProcotol
+    - VXProtocolManager
+  - VXDataPageServiceProcotol (0.0.1)
+  - VXHomePage (0.0.2):
+    - VXProtocolManager
+    - VXVXHomePageServiceProtocol
+  - VXProtocolManager (0.0.3)
+  - VXVXHomePageServiceProtocol (0.0.5)
+
+DEPENDENCIES:
+  - VXDataPage
+  - VXHomePage
+
+SPEC CHECKSUMS:
+  VXDataPage: fba1f77d69ff81a640240a632dbb17a27e0a3302
+  VXDataPageServiceProcotol: 8470e0cf57983c1fb76923a62efa8e2f1b1951ae
+  VXHomePage: 2c48ff5406dd84e236740e386720805e26b88409
+  VXProtocolManager: 23930025df1569999527cd61687052fd3fa5675e
+  VXVXHomePageServiceProtocol: 69bfc1263c3015b854fdb1c16b0b1be674958369
+
+PODFILE CHECKSUM: 1c04cbb53951cd77cf167807024218aeb34af289
+
+COCOAPODS: 1.2.0
