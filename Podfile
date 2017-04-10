@@ -5,6 +5,8 @@ target 'VXRootPage' do
    
     pod ‘VXDataPage’
     pod 'VXHomePage'
+    pod ‘VXRootPageServiceProtocol’
+    pod ‘VXProtocolManager’
     
     
 end
