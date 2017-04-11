@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "VXRootPage"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "this is VXRootPage."
 
   # This description is used to generate tags and improve search results.
@@ -134,9 +134,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-  s.dependency “VXDataPage”
-  s.dependency “VXHomePage”
-  s.dependency “VXRootPageServiceProtocol”
-  s.dependency “VXProtocolManager”
+   s.dependency "VXRootPageServiceProtocol"
 
 end
