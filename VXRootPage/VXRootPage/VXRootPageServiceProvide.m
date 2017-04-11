@@ -7,7 +7,21 @@
 //
 
 #import "VXRootPageServiceProvide.h"
+#import <VXProtocolManager/VXProtocolManager.h>
+#import <VXRootPageServiceProtocol/VXRootPageServiceProtocol.h>
+#import "VXRootPageViewController.h"
+@interface  VXRootPageServiceProvide()<VXRootPageServiceProtocol>
+
+@end
 
 @implementation VXRootPageServiceProvide
++ (void)load
+{
+    [VXProtocolManager registServiceProvide:[self new] forProtocol:@protocol(VXRootPageServiceProtocol)];
+}
 
+- (UIViewController *)rootPageViewControllerWith:(id)Object {
+    VXRootPageViewController *rootVC = [[VXRootPageViewController alloc] initWothObjectForRootPageViewController:Object];
+    return rootVC;
+}
 @end
