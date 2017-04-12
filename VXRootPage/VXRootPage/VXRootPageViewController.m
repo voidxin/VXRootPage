@@ -26,7 +26,7 @@
         for (UIViewController *vc in arr) {
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
             nav.tabBarItem.title = vc.title;
-            [self addChildViewController:vc];
+            [self addChildViewController:nav];
         }
     }
     return self;

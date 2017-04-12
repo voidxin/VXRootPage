@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
-
+#import <VXVXHomePageServiceProtocol/VXVXHomePageServiceProtocol.h>
+#import <VXProtocolManager/VXProtocolManager.h>
+#import <VXDataPageServiceProcotol/VXDataPageServiceProcotol.h>
+#import "VXRootPageViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +19,26 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    id <VXVXHomePageServiceProtocol> homeProvide = [VXProtocolManager serviceProvideForProtocol:@protocol(VXVXHomePageServiceProtocol)];
+    UIViewController *homePageVC = [homeProvide homepageViewControllerUserMessage:@"0110073"];
+   
+    
+    id <VXDataPageServiceProcotol> dataProvide = [VXProtocolManager serviceProvideForProtocol:@protocol(VXDataPageServiceProcotol)];
+    UIViewController *dataPageVC = [dataProvide dataPageViewControllerWith:@"this is a title"];
+    
+     NSArray *vcArr = @[homePageVC,dataPageVC];
+    VXRootPageViewController *tabVC = [[VXRootPageViewController alloc] initWothObjectForRootPageViewController:vcArr];
+    
+    self.window = ({
+        UIWindow *temWindow = [[UIWindow alloc] init];
+        temWindow.bounds = [UIScreen mainScreen].bounds;
+        temWindow.rootViewController = tabVC;
+        temWindow;
+    });
+    [self.window makeKeyWindow];
+    
+
     return YES;
 }
 
